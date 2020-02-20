@@ -1,0 +1,14 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "vanlia and node",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KDWCL/youtubeclone.git"
+  },
+  "author": "KimDongWoo",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
