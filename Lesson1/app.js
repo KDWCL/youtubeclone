@@ -22,6 +22,6 @@ app.use(helmet());
 
 app.get("/", handleHome);
 app.get("/profile", handleProfile);
-app.use("/user", userRouter); //use의 의미는 /user을 사용하면 useRouter안에 있는 모든 Router을 쓰게다라는 뜻이다.
+app.use("/user", userRouter); //use의 의미는 /user을 사용하면 useRouter안에 있는 모든 Router을 쓰겠다라는 뜻이다.
 
 export default app;
