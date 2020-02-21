@@ -1,1 +1,1 @@
-Cloning Youtube with Vanilla and NodeJS
+Cloning Youtube with VanillaJS and NodeJS
