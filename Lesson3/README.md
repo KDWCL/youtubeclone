@@ -36,7 +36,7 @@ application에서 발생하는 모든 일들을 logging하는 한다.
 ## 다음시간에 할 것
 
 ### Pug.js(express에 설치)
-Pug는 express View를 다루는 방식 중 하나.   
-express로 HTML을 보여줄 수 있다.   
-res.send대신에 실제 html을 전달함.   
-css 같은 것들로 꾸미기 가능.
+* Pug는 express View를 다루는 방식 중 하나.   
+* express로 HTML을 보여줄 수 있다.   
+* res.send대신에 실제 html을 전달함.   
+* css 같은 것들로 꾸미기 가능.
