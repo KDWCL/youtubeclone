@@ -17,9 +17,9 @@
 - routes 디렉토리 안에 globalRouter.js, userRouter.js, videoRouter.js
 
 - controllers 디렉토리 안에 userController.js, videoController.js
----
->실행 순서   
->* init.js => app.js => routes.js => routes 디렉토리 => routes.js
+
+* 실행 순서   
+   * init.js => app.js => routes.js => routes 디렉토리 => routes.js
 
 >routes.js를 만든 이유  
 >* 예를들어 나중에 해당 url로 가게되는 버튼이 있다면 url을 코드를 뒤져서 찾아야되기 때문에 하나에 알기쉽게 모아둔다.
