@@ -1,5 +1,7 @@
 # Recap
 
+**복습**
+
 ## code
 
 1. app.js 생성 및 어플리케이션 생성 app = express();
@@ -28,9 +30,6 @@
 
 >morgan   
 >* application에서 발생하는 모든 일들을 logging하는 한다.
-
-
-
 
 # 다음시간에 할 것
 
