@@ -8,15 +8,11 @@
 
 *  controllers 파일안에 userController.js, videoController.js 생성
 
-> hi
->  >hi
->>>gi
-
 ## Middleware
 
-- cookieParser   
-cookie를 전달받아서 사용할 수 있도록 만들어주는 미들웨어.   
-사용자 인증같은 곳에서 쿠키를 검사할 때 사용
+>cookieParser   
+>>cookie를 전달받아서 사용할 수 있도록 만들어주는 미들웨어.   
+>>사용자 인증같은 곳에서 쿠키를 검사할 때 사용
 
 - bodyParser   
 사용자가 웹사이트로 전달하는 정보들을 검사하는 미들웨어.   
