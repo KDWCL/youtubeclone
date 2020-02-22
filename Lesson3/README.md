@@ -29,9 +29,6 @@
 
 >Pug.js(express에 설치)
 >* Pug는 express View를 다루는 방식 중 하나.
-
 >* express로 HTML을 보여줄 수 있다.
-
-> * res.send대신에 실제 html을 전달함.
-
->  * css 같은 것들로 꾸미기 가능.
+>* res.send대신에 실제 html을 전달함.
+>* css 같은 것들로 꾸미기 가능.
