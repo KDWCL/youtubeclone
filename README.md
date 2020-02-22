@@ -10,10 +10,10 @@
 
 2. 밑의 코드를 실행시킨다.
 
-```node
-npm install
+    ```node
+    npm install
+    ```
 
-```
+3. 공부순서   
 
-3. 공부순서
 [여기](https://www.notion.so/kdwcl/BackEnd-ccbf1e9b895c4d258e99289ada100db4)
