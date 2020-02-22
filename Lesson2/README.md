@@ -21,15 +21,15 @@
 * 실행 순서   
    * init.js => app.js => routes.js => routes 디렉토리 => routes.js
 
->routes.js를 만든 이유  
->* 예를들어 나중에 해당 url로 가게되는 버튼이 있다면 url을 코드를 뒤져서 찾아야되기 때문에 하나에 알기쉽게 모아둔다.
+* routes.js를 만든 이유  
+   * 예를들어 나중에 해당 url로 가게되는 버튼이 있다면 url을 코드를 뒤져서 찾아야되기 때문에 하나에 알기쉽게 모아둔다.
 
->const VIDEO_DETAIL = "/:id";  
->* :id 라고 url에 지정해주면 express에서 변하는 값으로 인지하게 된다.
+* const VIDEO_DETAIL = "/:id";  
+   * :id 라고 url에 지정해주면 express에서 변하는 값으로 인지하게 된다.
 
->controller를 만들어주고 응답해줄 페이지들을 넣는다  
->* userController <= userRouter, globalRouter(home, search)  
->* videoController <= videoRouter, globalRouter(join, login, logout)
+* controller를 만들어주고 응답해줄 페이지들을 넣는다  
+   * userController <= userRouter, globalRouter(home, search)  
+   * videoController <= videoRouter, globalRouter(join, login, logout)
 
 ## VSC 단축키
 
