@@ -2,11 +2,15 @@
 
 ## code
 
-* routes.js 파일안에 경로 전부 설정 (나중에 헷갈리지 않기 위해)
+1. app.js 생성 및 어플리케이션 생성 app = express();
 
-* router 파일안에 globalRouter.js, userRouter.js, videoRouter.js 생성
+2. init.js 생성 및 app.js의 app을 export 시켜서 import로 가져옴
 
-*  controllers 파일안에 userController.js, videoController.js 생성
+3. routes.js 파일안에 경로 전부 설정 (나중에 헷갈리지 않기 위해)
+
+4. router 파일안에 globalRouter.js, userRouter.js, videoRouter.js 생성
+
+5. controllers 파일안에 userController.js, videoController.js 생성
 
 ## Middleware
 
