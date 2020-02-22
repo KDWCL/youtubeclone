@@ -1,6 +1,6 @@
 # Cloning Youtube with VanillaJS and NodeJS
 
-## installing Pug
+## Installing Pug
 
 **Pug**란 view engin이다. 설치해보자
 ```
