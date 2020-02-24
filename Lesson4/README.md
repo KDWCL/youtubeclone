@@ -146,18 +146,18 @@ layouts/main.pug
 
   3.  사용(2가지만 적음)
 
-  layouts/main.pug ( #{sitename} )
+      layouts/main.pug ( #{sitename} )
 
-        doctype html
-        html
-            head
-                script(src="https://kit.fontawesome.com/c26bdc350a.js", crossorigin="anonymous")
-                title | #{siteName}
-            body
-                include ../partials/header
-                main
-                    block content
-                include ../partials/footer
+              doctype html
+                 html
+                   head
+                      script(src="https://kit.fontawesome.com/c26bdc350a.js", crossorigin="anonymous")
+                      title | #{siteName}
+                   body
+                        include ../partials/header
+                        main
+                           block content
+                        include ../partials/footer
 
 
         //- block안에 화면의 내용들이 채워질것임
@@ -165,18 +165,18 @@ layouts/main.pug
         //- 큰틀이되는 레이아웃을 하나 만들고 여기서 관리하게한다
         //- partials안에 있는 footer.pug를 쓰고 싶으면 include 파일위치 를 해주면 된다
 
-    partials/header.pug (routes.home, routes.join, routes.login)
+     partials/header.pug (routes.home, routes.join, routes.login)
 
-        header.header
-            .header__column
-                a(href=routes.home)
-                   i.fab.fa-youtube
-            .header__column
-                ul
-                    li
-                        a(href=routes.join) Join
-                    li
-                        a(href=routes.login) Log In
+          header.header
+              .header__column
+                 a(href=routes.home)
+                    i.fab.fa-youtube
+             .header__column
+                 ul
+                        li
+                           a(href=routes.join) Join
+                        li
+                          a(href=routes.login) Log In
 
 ---
 
