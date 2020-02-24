@@ -165,7 +165,7 @@ layouts/main.pug
         //- 큰틀이되는 레이아웃을 하나 만들고 여기서 관리하게한다
         //- partials안에 있는 footer.pug를 쓰고 싶으면 include 파일위치 를 해주면 된다
 
-partials/header.pug (routes.home, routes.join, routes.login)
+    partials/header.pug (routes.home, routes.join, routes.login)
 
         header.header
             .header__column
@@ -215,7 +215,7 @@ partials/header.pug (routes.home, routes.join, routes.login)
         //- extends layouts/main.pug 뜻은 ./layouts/main.pug 파일을 복붙해서 가져오겠다는 뜻이다
         //-  pageTitle: 'Home'을 받으면 extends한 main.pug에서 쓸 수 있다.
 
-layouts/main.pug
+    layouts/main.pug
 
         doctype html
         html
