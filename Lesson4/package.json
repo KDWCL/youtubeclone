@@ -1,8 +1,8 @@
 {
-  "name": "lesson2",
+  "name": "lesson4",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "init.js",
   "author": "KDW",
   "dependencies": {
     "@babel/core": "^7.8.4",
