@@ -12,6 +12,7 @@ const app = express();
 // 애플리케이션 레벨 미들웨어임
 app.use(helmet());
 app.set('view engine', 'pug');
+//app.set("views", "/dist") <- 기본 디렉토리인 views 를 /dist로 변경가능
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,7 +25,3 @@ app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
 
 export default app;
-
-// 정리하자
-// app.use(함수) <-- 미들웨어
-// app.use(path,함수) <-- 모든 HTTP Method 요청에 대해 실행
