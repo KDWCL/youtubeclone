@@ -1,9 +1,12 @@
 // globalRouter
 // Home은 홈에서 영상을 보여주기 위해서 여기에 넣어줌, Search는 영상서치를 위해 넣어줌)
 export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
-export const search = (req, res) =>
-  res.render('search', { pageTitle: 'Search' });
-
+export const search = (req, res) =>{
+const {query:{term: searchingBy}} = req;
+console.log(searchingBy)
+//const searchingBy = req.query.term <- es6이전 문법
+res.render('search', { pageTitle: 'Search',searchingBy });
+};
 // videoRouter
 export const videos = (req, res) =>
   res.render('videos', { pageTitle: 'Videos' });
