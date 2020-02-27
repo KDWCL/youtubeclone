@@ -1,5 +1,3 @@
-# Cloning Youtube with VanillaJS and NodeJS
-
 ## 2.0 ~ 2.7
 
 - 2.0 what is a Server

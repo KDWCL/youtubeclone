@@ -1,5 +1,3 @@
-# Cloning Youtube with VanillaJS and NodeJS
-
 ## MVC
 
 * M data  
