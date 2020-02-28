@@ -4,7 +4,7 @@ include mixins/videoBlock
 block content
     .videos
         each item in videos
-            +videoBlock({title: item.title, description: item.description})
+            +videoBlock({title: item.title, views: item.views, fileUrl: item.videoFile})
 
 
 //- extends layouts/main.pug 뜻은 ./layouts/main.pug 파일을 복붙해서 가져오겠다는 뜻이다
