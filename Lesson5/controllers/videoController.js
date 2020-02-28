@@ -6,7 +6,7 @@ export const search = (req, res) =>{
 const {query:{term: searchingBy}} = req;
 console.log(searchingBy)
 //const searchingBy = req.query.term <- es6이전 문법
-res.render('search', { pageTitle: 'Search',searchingBy });
+res.render('search', { pageTitle: 'Search',searchingBy,videos });
 };
 // videoRouter
 export const upload = (req, res) =>
