@@ -2,7 +2,8 @@ extends layouts/main.pug
 
 block content
     .videos
-        h1 video
+        each video in videos
+            h1= video.title
 
 
 //- extends layouts/main.pug 뜻은 ./layouts/main.pug 파일을 복붙해서 가져오겠다는 뜻이다
