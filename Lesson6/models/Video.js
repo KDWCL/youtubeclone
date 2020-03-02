@@ -22,7 +22,13 @@ const VideoSchema = new mongoose.Schema({
   createAt: {
     type: Date,
     default: Date.now // <- Date.now()를 하게되면 현재 날짜를 받음
-  }
+  },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment'
+    }
+  ]
 });
 
 /* 헷갈리는 것
