@@ -1,6 +1,6 @@
 import routes from '../routes';
 import Video from '../models/Video';
-// 이 부분은 모델일뿐이지 element가 아니다.
+// 이 부분은 모델일뿐이지 element가 아니다
 
 // globalRouter
 // Home은 홈에서 영상을 보여주기 위해서 여기에 넣어줌, Search는 영상서치를 위해 넣어줌)
@@ -30,12 +30,19 @@ export const search = (req, res) => {
 export const getUpload = (req, res) =>
   res.render('upload', { pageTitle: 'Upload' });
 
-export const postUpload = (req, res) => {
+export const postUpload = async (req, res) => {
   const {
-    body: { file, title, description }
+    body: { title, description },
+    file: { path }
   } = req;
-  // To Do: Upload and save video
-  res.redirect(routes.videoDetail(324393));
+  // console.log(req.file);
+  const newVideo = await Video.create({
+    // 여기서의 Video는 models/Vidoe.js 임
+    fileUrl: path,
+    title,
+    description
+  });
+  res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = (req, res) =>
