@@ -35,7 +35,7 @@ export const postUpload = async (req, res) => {
     body: { title, description },
     file: { path }
   } = req;
-  // console.log(req.file);
+  console.log(req.file);
   const newVideo = await Video.create({
     // 여기서의 Video는 models/Vidoe.js 임
     fileUrl: path,
