@@ -61,8 +61,20 @@ export const videoDetail = async (req, res) => {
     res.redirect(routes.home); // home으로 다시 리다이렉트
   }
 };
-export const editVideo = (req, res) =>
-  res.render('editVideo', { pageTitle: 'EditVideo' });
+export const geteditVideo = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    res.render('editVideo', { pageTitle: `'Edit ${video.title}`, video });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
+
+export const posteditVideo = (req, res) => {};
+
 export const deleteVideo = (req, res) =>
   res.render('deleteVideo', { pageTitle: 'DeleteVideo' });
 
