@@ -1,5 +1,6 @@
 import routes from '../routes';
 import Video from '../models/Video';
+
 // 이 부분은 모델일뿐이지 element가 아니다
 
 // globalRouter
@@ -53,9 +54,9 @@ export const videoDetail = async (req, res) => {
       params: { id }
     } = req;
     const video = await Video.findById(id);
-    console.log(video);
+    // console.log(video);
     // console.log(id);
-    res.render('videoDetail', { pageTitle: 'videoDetail', video });
+    res.render('videoDetail', { pageTitle: video.title, video });
   } catch (error) {
     console.log(error); // 에러 표시
     res.redirect(routes.home); // home으로 다시 리다이렉트
@@ -80,15 +81,21 @@ export const posteditVideo = async (req, res) => {
     body:{title, description}
   } = req;
   try{
-    await Video.findOneAndUdate({id},{title,description})
-    res.render(routes.videoDetail(id))
+    await Video.findOneAndUpdate({_id: id},{title,description})
+    res.redirect(routes.videoDetail(id))
   }catch(error){
+    console.log(error)
     res.redirect(routes.home);
   }
 };
 
-export const deleteVideo = (req, res) =>
-  res.render('deleteVideo', { pageTitle: 'DeleteVideo' });
+export const deleteVideo = async (req, res) =>{
+  const {params:{id}} = req
+  try{
+    await Video.findOneAndRemove({_id:id})
+  }catch(error){}
+  res.redirect(routes.home)
+}
 
 // render 함수의 첫번째 인자는 템플릿(.pug), 두번째 인자는 템플릿에 추가할 정보가 담긴 객체
 // pageTitle 변수가 home 템플릿으로 전달 되어짐
