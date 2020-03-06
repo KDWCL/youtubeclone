@@ -19,13 +19,16 @@ export const home = async (req, res) => {
      throw Error("lalala")
      res.render('home', { pageTitle: 'Home', videos }); */
 };
-export const search = (req, res) => {
-  const {
-    query: { term: searchingBy }
-  } = req;
-  console.log(searchingBy);
-  //const searchingBy = req.query.term <- es6이전 문법
-  res.render('search', { pageTitle: 'Search', searchingBy });
+export const search = async (req, res) => {
+  const {query:{term:searchingBy}}= req;
+  let videos = [];
+  try{
+    videos = await Video.find({title: {$regex: searchingBy, $options:"i"}});
+    // i 란 insensitive(덜민감한)이란 뜻이다. 대소문자 구분을 안할 때 사용
+  }catch(error){
+    console.log(error);
+  }
+  res.render("search",{pageTitle:"Search", searchingBy, videos})
 };
 // videoRouter
 export const getUpload = (req, res) =>
