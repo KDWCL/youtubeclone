@@ -1,8 +1,23 @@
 import routes from '../routes';
+import Video from '../models/Video';
+// 이 부분은 모델일뿐이지 element가 아니다.
+
 // globalRouter
 // Home은 홈에서 영상을 보여주기 위해서 여기에 넣어줌, Search는 영상서치를 위해 넣어줌)
-export const home = (req, res) =>
-  res.render('home', { pageTitle: 'Home', videos } /*videos:videos*/);
+export const home = async (req, res) => {
+  try {
+    const videos = await Video.find({});
+    res.render('home', { pageTitle: 'Home', videos });
+  } catch (error) {
+    console.log(error);
+    res.render('home', { pageTitle: 'Home', videos: [] });
+  }
+  /* try, catch문을 해주는 이유는 await가 끝날때 까지 기다리는 용도이지 제대로 성공했는지 확인하는 용도가 아니기 때문이다
+     만약 error를 던져서 실험해보고 싶다면 res.render 위에 throw Error("lalala")를 적어주면 된다
+     const videos = await Video.find({});
+     throw Error("lalala")
+     res.render('home', { pageTitle: 'Home', videos }); */
+};
 export const search = (req, res) => {
   const {
     query: { term: searchingBy }
