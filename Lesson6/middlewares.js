@@ -1,8 +1,12 @@
 import routes from './routes';
 import multer from 'multer';
 
-const multerVideo = multer({ dest: 'vidoes/' });
+const multerVideo = multer({ dest: 'uploads/vidoes/' });
 // 우리가 비디오를 업로드하면 server에 있는 folder(videos/)에 업로드된다
+/* /uploads/videos/ 제일앞에 / 을 붙여줌으로서 내컴퓨터의 root에 upload를 만든다. 안붙히면 uploads라는 파일이 있다고 생각하고 그안에 만듬
+   하지만 uploads라는 파일은 없기 때문에 app.js에서 app.use('/uploads', express.static('uploads')); 이렇게 적어준다. 
+   주어진 directory에서 file을 전달하는 새로운 middelware function 
+   */
 
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = 'WeTube';

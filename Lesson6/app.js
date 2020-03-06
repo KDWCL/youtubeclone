@@ -13,6 +13,10 @@ const app = express();
 app.use(helmet());
 app.set('view engine', 'pug');
 //app.set("views", "/dist") <- 기본 디렉토리인 views 를 /dist로 변경가능
+app.use('/uploads', express.static('uploads'));
+/* 주어진 directory에서 file을 전달하는 새로운 middelware function
+   즉, /uploads로 가면 uploads라는 디렉토리로 들어가진다는 것임
+*/
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
