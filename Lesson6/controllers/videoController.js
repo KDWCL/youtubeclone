@@ -7,7 +7,7 @@ import Video from '../models/Video';
 // Home은 홈에서 영상을 보여주기 위해서 여기에 넣어줌, Search는 영상서치를 위해 넣어줌)
 export const home = async (req, res) => {
   try {
-    const videos = await Video.find({});
+    const videos = await Video.find({}).sort({_id:-1});
     res.render('home', { pageTitle: 'Home', videos });
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ export const search = (req, res) => {
   } = req;
   console.log(searchingBy);
   //const searchingBy = req.query.term <- es6이전 문법
-  res.render('search', { pageTitle: 'Search', searchingBy, videos });
+  res.render('search', { pageTitle: 'Search', searchingBy });
 };
 // videoRouter
 export const getUpload = (req, res) =>
@@ -86,6 +86,7 @@ export const posteditVideo = async (req, res) => {
   }catch(error){
     console.log(error)
     res.redirect(routes.home);
+    
   }
 };
 
