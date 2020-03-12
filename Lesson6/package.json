@@ -8,9 +8,11 @@
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.8.4",
+    "autoprefixer": "^9.7.4",
     "babel-core": "^6.26.3",
     "cookie-parser": "^1.4.4",
     "cross-env": "^7.0.2",
+    "css-loader": "^3.4.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -18,14 +20,17 @@
     "mongoose": "^5.9.3",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
+    "sass-loader": "^8.0.2",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 2",
-    "dev:assets": "WEBPACK_ENV=development webpack",
-    "build:assets": "WEBPACK_ENV=production webpack"
+    "dev:assets": "cross-env WEBPACK_ENV=development webpack",
+    "build:assets": "cross-env WEBPACK_ENV=production webpack"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

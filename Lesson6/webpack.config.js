@@ -1,6 +1,7 @@
 const path = require('path');
 // import path from 'path'; <- 최신문법을 사용 못하기 때문에 위에껄 사용, 즉 모던자바스크립트가 아님
 const ExtractCss = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const MODE = process.env.WEBPACK_ENV;
 /* 이것은 dot.env를 이용하는것이고 .env에 추가하지 않고 수동으로 package.json에서 추가해준것이다.
@@ -38,7 +39,12 @@ const config = {
             loader: 'css-loader'
           },
           {
-            loader: 'post-loader' // 이 로더는 호환성 유지를 위해 만들어줌
+            loader: 'postcss-loader', // 이 로더는 호환성 유지를 위해 만들어줌
+            options: {
+              plugin() {
+                return [autoprefixer({ browser: 'cover 99.5%' })];
+              }
+            }
           },
           {
             loader: 'sass-loader'
@@ -49,8 +55,9 @@ const config = {
   },
   output: {
     path: OUTPUT_DIR,
-    filename: '[name].[format]'
-  }
+    filename: '[name].js'
+  },
+  plugins: [new ExtractCss('styles.css')]
 };
 
 module.exports = config;
