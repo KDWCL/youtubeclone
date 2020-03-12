@@ -7,7 +7,7 @@ import Video from '../models/Video';
 // Home은 홈에서 영상을 보여주기 위해서 여기에 넣어줌, Search는 영상서치를 위해 넣어줌)
 export const home = async (req, res) => {
   try {
-    const videos = await Video.find({}).sort({_id:-1});
+    const videos = await Video.find({}).sort({ _id: -1 });
     res.render('home', { pageTitle: 'Home', videos });
   } catch (error) {
     console.log(error);
@@ -20,15 +20,19 @@ export const home = async (req, res) => {
      res.render('home', { pageTitle: 'Home', videos }); */
 };
 export const search = async (req, res) => {
-  const {query:{term:searchingBy}}= req;
+  const {
+    query: { term: searchingBy }
+  } = req;
   let videos = [];
-  try{
-    videos = await Video.find({title: {$regex: searchingBy, $options:"i"}});
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: 'i' }
+    });
     // i 란 insensitive(덜민감한)이란 뜻이다. 대소문자 구분을 안할 때 사용
-  }catch(error){
+  } catch (error) {
     console.log(error);
   }
-  res.render("search",{pageTitle:"Search", searchingBy, videos})
+  res.render('search', { pageTitle: 'Search', searchingBy, videos });
 };
 // videoRouter
 export const getUpload = (req, res) =>
@@ -80,26 +84,27 @@ export const geteditVideo = async (req, res) => {
 
 export const posteditVideo = async (req, res) => {
   const {
-    params:{id},
-    body:{title, description}
+    params: { id },
+    body: { title, description }
   } = req;
-  try{
-    await Video.findOneAndUpdate({_id: id},{title,description})
-    res.redirect(routes.videoDetail(id))
-  }catch(error){
-    console.log(error)
+  try {
+    await Video.findOneAndUpdate({ _id: id }, { title, description });
+    res.redirect(routes.videoDetail(id));
+  } catch (error) {
+    console.log(error);
     res.redirect(routes.home);
-    
   }
 };
 
-export const deleteVideo = async (req, res) =>{
-  const {params:{id}} = req
-  try{
-    await Video.findOneAndRemove({_id:id})
-  }catch(error){}
-  res.redirect(routes.home)
-}
+export const deleteVideo = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    await Video.findOneAndRemove({ _id: id });
+  } catch (error) {}
+  res.redirect(routes.home);
+};
 
 // render 함수의 첫번째 인자는 템플릿(.pug), 두번째 인자는 템플릿에 추가할 정보가 담긴 객체
 // pageTitle 변수가 home 템플릿으로 전달 되어짐
