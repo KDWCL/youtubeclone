@@ -17,6 +17,7 @@ app.use('/uploads', express.static('uploads'));
 /* 주어진 directory에서 file을 전달해주는 새로운 middelware function
    즉, /uploads로 가면 uploads라는 디렉토리로 안에서 정적파일을 가져올수있음
 */
+app.use('/static', express.static('static'));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

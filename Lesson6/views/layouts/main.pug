@@ -3,12 +3,13 @@ html
     head   
         script(src="https://kit.fontawesome.com/c26bdc350a.js", crossorigin="anonymous")
         title #{pageTitle} | #{siteName}
+        link(rel="stylesheet", href="/static/styles.css")
     body
         include ../partials/header
         main
             block content
         include ../partials/footer
-           
+        script(src="static/main.js")
 
 
 //- block안에 화면의 내용들이 채워질것임

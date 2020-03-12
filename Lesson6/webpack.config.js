@@ -8,15 +8,24 @@ const MODE = process.env.WEBPACK_ENV;
    "dev:assets": "WEBPACK_ENV=development webpack"의 WEBPACK_ENV와 같아야 된다. */
 
 const ENTRY_FILE = path.resolve(__dirname, 'assets', 'js', 'main.js');
+// assets라는 디렉토리안에 js 디렉토리안에 main.js 경로
 const OUTPUT_DIR = path.join(__dirname, 'static');
 
 const config = {
   mode: MODE,
+  //entry: ['@babel/polyfill', ENTRY_FILE], <- @babel/polyfill은 이제 사용안함.
   entry: ENTRY_FILE,
   module: {
     // 모듈의 역할은 확장자 scss인 파일을 만날때마다 어떤 loader을 실행시켜라임
     rules: [
       {
+        test: /\.(js)$/,
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ],
+
         /* 우리가 해야 될 것
         1. scss파일을 찾는다
         2. scss파일을 css파일로 변형
@@ -41,8 +50,8 @@ const config = {
           {
             loader: 'postcss-loader', // 이 로더는 호환성 유지를 위해 만들어줌
             options: {
-              plugin() {
-                return [autoprefixer({ browser: 'cover 99.5%' })];
+              plugins() {
+                return [autoprefixer({ overrideBrowserslist: 'cover 99.5%' })];
               }
             }
           },
