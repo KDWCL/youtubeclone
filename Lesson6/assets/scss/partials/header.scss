@@ -23,15 +23,15 @@
         }
         ul {
           display: flex;
+          font-weight: 600;
           text-transform: uppercase;
+          a{
+              color:white;
+              text-decoration: none;
+          }
           li:not(:last-child) {
             margin-right: 15px;
           }
-        }
-        a{
-            text-decoration: none;
-            color:white;
-            font-weight: 600;
         }
         form {
           width: 100%;
@@ -42,6 +42,7 @@
             font-size: 14px;
             color: $black;
             font-weight: 600;
+            max-width: none;
             &::placeholder {
               font-weight: 300;
               color: rgba(0, 0, 0, 0.7);
