@@ -14,5 +14,19 @@ main {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  min-height: 70vh;
+  min-height: 70vh; // footer가 위로 올라가지 않게 끔 최소 높이 지정해줌
+}
+
+button,
+input {
+  padding: 7px 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $black;
+  font-weight: 600;
+  &::placeholder {
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+  }
 }
