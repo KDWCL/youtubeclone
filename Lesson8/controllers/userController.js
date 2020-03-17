@@ -1,11 +1,12 @@
 import routes from "../routes"
+import User from '../models/User'
 
 // globalRouter
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
 };
 
-export const postJoin = (req, res) => {
+export const postJoin = async(req, res) => {
   const {
     body: { name, email, password, password2 }
   } = req;
@@ -14,6 +15,10 @@ export const postJoin = (req, res) => {
     res.render("join", { pageTitle: "Join" });
   } else {
     // To Do: Register User
+    // 계정 생성 -> 이를 가입시킬거임
+   const iser = await User.create({
+     name,emain
+   })
     // To Do: Log user in
     res.redirect(routes.home);
   }

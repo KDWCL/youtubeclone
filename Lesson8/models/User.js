@@ -16,7 +16,7 @@ UserSchema.Schema.plugin(passportLocalMongoose,{usernameField:'email'})
 // passportLocalMongoose는 configuration object(설정객체)가 필요함
 // passportLocalMongoose에게 어떤 field를 username으로 할 것인지를 알려줘야된다. (이메일로 할건지 아이디로할건지 등)
 // User.plugin(passportLocalMongoose, options);
-const model = mongoose.Model("User", UserSchema);
+const model = mongoose.model("User", UserSchema);
 
 export default model; 
 
