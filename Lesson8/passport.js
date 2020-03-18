@@ -9,7 +9,7 @@ passport.serializeUser(User.serializeUser())
    passport-local-mongoose를 사용하여 shorcut(지름길)을 이용한다.
    http://www.passportjs.org/docs/username-password/ <- serailizeUser 참고 */
 passport.deserializeUser(User.deserializeUser())
-
+// deserializeUser은 쉽게 말해서 id를 받아서 사용자를 식별할때 사용
 
 
 /* serialization 이라는 것은 기본적으로 "어떤 정보를 쿠키에게 주느냐"를 의미한다.

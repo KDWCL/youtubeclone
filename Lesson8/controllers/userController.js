@@ -15,11 +15,13 @@ export const postJoin = async(req, res) => {
     res.render("join", { pageTitle: "Join" });
   } else {
     // To Do: Register User
-    // 계정 생성 -> 이를 가입시킬거임
-   const iser = await User.create({
-     name,emain
-   })
+    // 사용자가입
+   const user = await User.create({
+     name,email
+   });
+   await User.register(user. password)
     // To Do: Log user in
+    // 그사용자를 로그인시킴
     res.redirect(routes.home);
   }
 };
